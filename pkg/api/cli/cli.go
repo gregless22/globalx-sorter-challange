@@ -83,15 +83,19 @@ func (s service) runArgs(args []string) error {
 	}
 
 	// Open the new file
-	// file, err := os.Create("./temp  .txt")
-	// if err != nil {
-	// 	return err
-	// }
+	file, err := os.Create("./sorted-names-list.txt")
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	writer := bufio.NewWriter(file)
 
 	for _, n := range names {
-		fmt.Printf("%v %v\n", n.Firstname, n.Lastname)
-
+		myString := fmt.Sprintf("%v %v\n", n.Firstname, n.Lastname)
+		writer.WriteString(myString)
+		fmt.Print(myString)
 	}
+	writer.Flush()
 
 	return nil
 
