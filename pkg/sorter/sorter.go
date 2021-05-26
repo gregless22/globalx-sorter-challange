@@ -18,6 +18,11 @@ func NewLastNameSorter() NameSorter {
 
 type lastNameSorter struct{}
 
+func (lastNameSorter) NameSort(n *[]person.Names) error {
+	sort.Sort(names(*n))
+	return nil
+}
+
 // use the golang sort package which requires the Len, Less and Swap interfaces
 type names []person.Names
 
@@ -31,9 +36,4 @@ func (n names) Less(i, j int) bool {
 
 func (n names) Swap(i, j int) {
 	n[i], n[j] = n[j], n[i]
-}
-
-func (lastNameSorter) NameSort(n *[]person.Names) error {
-	sort.Sort(names(*n))
-	return nil
 }
