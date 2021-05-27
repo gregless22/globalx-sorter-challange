@@ -10,6 +10,10 @@ use the -v flag to get verbose output
 To build run "go build -o ./bin/name-sorter cmd/main.go" in the project directory.
 This will build an executable file in the bin directory
 
+If you are on another platform try the makefile
+Run "make compile" and this will output to all platforms
+If there is a test failure, it does not do so very gracefully
+
 It is built in Go 1.16.4
 
 ### Docker

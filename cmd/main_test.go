@@ -8,27 +8,25 @@ import (
 )
 
 // TestCommandLineArg test that if a command line argument is passed in
-func TestCommandLineArg(t *testing.T) {
-	is := is.New(t)
+// func TestCommandLineArg(t *testing.T) {
+// 	is := is.New(t)
 
-	args := []string{"./testFile"}
-	var stdout bytes.Buffer
+// 	args := []string{"./main", "./testFile"}
+// 	var stdout bytes.Buffer
 
-	err := run(args, &stdout)
-	is.NoErr(err)
+// 	err := run(args, &stdout)
+// 	is.NoErr(err)
 
-	// fmt.Println(err.Error())
+// 	out := stdout.String()
+// 	is.True(strings.Contains(out, "./testFile"))
 
-	// out := stdout.String()
-	// is.True(strings.Contains(out, "./testFile"))
-
-}
+// }
 
 // TestNoArg will check if no file is put in we get an error back
 func TestNoArg(t *testing.T) {
 	is := is.New(t)
 
-	args := []string{}
+	args := []string{"./main"}
 	var stdout bytes.Buffer
 
 	err := run(args, &stdout)

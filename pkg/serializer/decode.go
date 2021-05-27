@@ -7,8 +7,7 @@ import (
 )
 
 type Serializer interface {
-	// Encode([]byte, person.Person)
-	Decode([]byte, *person.Names)
+	Decode([]byte, *person.Names) error
 }
 
 func NewCLISerializser() Serializer {
@@ -17,7 +16,7 @@ func NewCLISerializser() Serializer {
 
 type cliSerialiser struct{}
 
-func (cliSerialiser) Decode(b []byte, p *person.Names) {
+func (cliSerialiser) Decode(b []byte, p *person.Names) error {
 	myString := string(b)
 
 	// split to get firstname and lastname
@@ -25,4 +24,5 @@ func (cliSerialiser) Decode(b []byte, p *person.Names) {
 	p.Firstname = strings.Join(strArray[:len(strArray)-1], " ")
 	p.Lastname = strArray[len(strArray)-1]
 
+	return nil
 }
