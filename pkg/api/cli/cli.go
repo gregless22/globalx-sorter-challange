@@ -93,7 +93,7 @@ func (s service) openFile(names *[]person.Names) error {
 	}
 
 	if len(*names) < 1 {
-		return errors.New("not able to get names from file")
+		return errors.New("not able to get names from file, is it empty or not formatted correctly?")
 	}
 
 	return nil

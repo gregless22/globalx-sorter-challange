@@ -2,17 +2,18 @@
 
 ### Testing
 
-Testing can be done by running "go test ./cmd/main.go"
-use the -v flag to get verbose output
+Testing can be done by running "make test"
+
+This runs "go test ./cmd/main.go" and
+uses the -v flag to get verbose output
 
 ### Build
 
-To build run "go build -o ./bin/name-sorter cmd/main.go" in the project directory.
-This will build an executable file in the bin directory
+To compile run "make compile" and this will output to all platforms.  
+I am unsure of how this will hold up on other platforms, different GOPATH configurations etc
 
-If you are on another platform try the makefile
-Run "make compile" and this will output to all platforms
-If there is a test failure, it does not do so very gracefully
+Alternatively build run "go build -o ./bin/name-sorter cmd/main.go" in the project directory.
+This will build an executable file in the bin directory
 
 It is built in Go 1.16.4
 
