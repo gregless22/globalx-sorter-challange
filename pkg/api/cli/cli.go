@@ -10,6 +10,8 @@ import (
 	"github.com/gregless22/globalx-sorter-challange/pkg/serializer"
 )
 
+//  The CLI is the interface between any arguements that are passed in during the run phase and the program
+
 type service struct {
 	args         []string
 	personSerice person.Service

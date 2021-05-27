@@ -33,22 +33,12 @@ func run(args []string, stdout io.Writer) error {
 
 	nameSorter := sorter.NewLastNameSorter()
 
-	// fileHandler := fileHandler.NewService()
 	ps := person.NewService(nameSorter)
-	ns := serializer.NewCLISerializser()
-	// se := serializser.NewService()
+	ns := serializer.NewCLISerializer()
 	err := cli.NewService(args[1:], ps, ns)
 	if err != nil {
 		return err
 	}
-
-	// Read in the file
-
-	// decode file to array of persons
-
-	// sort by last name
-
-	// encode to file output and stdout
 
 	return nil
 }

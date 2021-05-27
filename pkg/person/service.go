@@ -10,6 +10,7 @@ type NameSorter interface {
 	NameSort(*[]Names) error
 }
 
+//  Returns a new service for the Person Domain
 func NewService(sorter NameSorter) Service {
 	return names{sorter}
 }

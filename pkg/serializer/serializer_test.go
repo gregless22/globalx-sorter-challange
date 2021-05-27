@@ -11,7 +11,7 @@ func TestNameSerializer(t *testing.T) {
 	testBytes := []byte(`Adonis Julius Archer`)
 	p := &person.Names{}
 	is := is.New(t)
-	testSerializer := NewCLISerializser()
+	testSerializer := NewCLISerializer()
 	err := testSerializer.Decode(testBytes, p)
 	is.NoErr(err)
 
